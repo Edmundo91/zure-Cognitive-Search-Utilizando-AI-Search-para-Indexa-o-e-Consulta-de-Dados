@@ -41,15 +41,14 @@ Este projeto implementa um serviço de busca inteligente utilizando Azure Cognit
     { "name": "data_publicacao", "type": "Edm.DateTimeOffset", "sortable": true }
   ]
 }
-
+```
 
 ## Criando uma API para Consulta
 
 ### Instalando as Dependências
 Instale as dependências no ambiente Python:
 
-```bash
-pip install flask requests
+bash pip install flask requests
 
 
 #### Crie um arquivo app.py com a seguinte implementação:
