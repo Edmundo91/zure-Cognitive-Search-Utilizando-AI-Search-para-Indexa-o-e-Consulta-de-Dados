@@ -53,7 +53,8 @@ Este projeto implementa um serviço de busca inteligente utilizando Azure Cognit
 
 2. Crie um arquivo app.py com a seguinte implementação:
 
-- from flask import Flask, request, jsonify
+```python
+from flask import Flask, request, jsonify
 import requests
 
 app = Flask(__name__)
@@ -73,8 +74,9 @@ def buscar():
 if __name__ == "__main__":
     app.run(debug=True)
 ##### Testando a API no Postman
+```
 
-Inicie a API com o comando:
+3. Inicie a API com o comando:
 
 python app.py
 
