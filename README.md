@@ -78,8 +78,8 @@ if __name__ == "__main__":
 
 3. Inicie a API com o comando:
 
-python app.py
+- python app.py
 
-Faça uma requisição GET para:
+4. Faça uma requisição GET para:
 
-http://127.0.0.1:5000/buscar?q=pesquisa
+- http://127.0.0.1:5000/buscar?q=pesquisa
