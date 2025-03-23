@@ -51,9 +51,9 @@ Este projeto implementa um serviço de busca inteligente utilizando Azure Cognit
 - bash pip install flask requests
 
 
-#### Crie um arquivo app.py com a seguinte implementação:
+2. Crie um arquivo app.py com a seguinte implementação:
 
-from flask import Flask, request, jsonify
+- from flask import Flask, request, jsonify
 import requests
 
 app = Flask(__name__)
