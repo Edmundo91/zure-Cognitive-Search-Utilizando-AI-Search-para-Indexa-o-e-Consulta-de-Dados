@@ -41,3 +41,44 @@ Este projeto implementa um serviço de busca inteligente utilizando Azure Cognit
     { "name": "data_publicacao", "type": "Edm.DateTimeOffset", "sortable": true }
   ]
 }
+
+
+## Criando uma API para Consulta
+
+### Instalando as Dependências
+Instale as dependências no ambiente Python:
+
+```bash
+pip install flask requests
+
+
+#### Crie um arquivo app.py com a seguinte implementação:
+
+from flask import Flask, request, jsonify
+import requests
+
+app = Flask(__name__)
+
+AZURE_SEARCH_ENDPOINT = "https://meu-search-service.search.windows.net"
+AZURE_SEARCH_API_KEY = "SUA_CHAVE_AQUI"
+AZURE_SEARCH_INDEX = "artigos-index"
+
+@app.route("/buscar", methods=["GET"])
+def buscar():
+    termo = request.args.get("q")
+    headers = {"Content-Type": "application/json", "api-key": AZURE_SEARCH_API_KEY}
+    query = {"search": termo}
+    response = requests.post(f"{AZURE_SEARCH_ENDPOINT}/indexes/{AZURE_SEARCH_INDEX}/docs/search?api-version=2021-04-30-Preview", json=query, headers=headers)
+    return jsonify(response.json())
+
+if __name__ == "__main__":
+    app.run(debug=True)
+##### Testando a API no Postman
+
+Inicie a API com o comando:
+
+python app.py
+
+Faça uma requisição GET para:
+
+http://127.0.0.1:5000/buscar?q=pesquisa
